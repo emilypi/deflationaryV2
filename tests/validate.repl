@@ -1,0 +1,3 @@
+(begin-tx)
+(verify 'deflationaryV2)
+(commit-tx)

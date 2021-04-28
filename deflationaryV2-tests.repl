@@ -1,0 +1,13 @@
+(begin-tx)
+(load "deps/fungible-v2.pact")
+(load "deflationaryV2.pact")
+(commit-tx)
+
+;; formal verification
+(load "tests/validate.repl")
+
+;; typecheck
+(load "tests/typecheck.repl")
+
+;; unit-tests
+(load "tests/unit-tests.repl")

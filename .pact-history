@@ -1,0 +1,18 @@
+(load "deflationaryV2-tests.repl" true)
+(load "deflationaryV2.repl" true)
+(load "foo.repl" true)
+(load "foo.repl" true)
+(load "foo.repl" true)
+(load "foo.repl" true)
+(load "foo.repl" true)
+validate-keypair 
+validate-keypair 
+(load "foo.repl" true)
+(load "foo.repl" true)
+(load "foo.repl" true)
+(load "foo.repl" true)
+(load "foo.repl" true)
+(load "foo.repl" true)
+(load "foo.repl" true)
+(load "foo.repl" true)
+(load "foo.repl" true)
