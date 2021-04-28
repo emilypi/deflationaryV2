@@ -1,8 +1,10 @@
 (begin-tx)
 
-(expect
-  "this is a test"
-  true
-  true)
+(use deflationaryV2)
+
+;; (expect-failure
+;;   "#transfer: Disallows negative transfer."
+;;   "amount must be positive"
+;;   (transfer 'alice-account 'bob-account -1.0))
 
 (commit-tx)
