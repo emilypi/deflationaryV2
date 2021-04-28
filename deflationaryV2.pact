@@ -3,7 +3,7 @@
   @doc " 'First deflationary token model on Kadena. Made by Thanos' 5% burn "
 
   @model
-    [ (defproperty conserves-mass
+    [ (defproperty conserves-mass (amount:decimal)
         (= (column-delta token-table 'balance) (- 0.0 (* TX_BURN amount))))
 
       (defproperty valid-account-id (accountId:string)
@@ -158,10 +158,10 @@
 
     @doc " Transfer to an account, creating it if it does not exist. "
 
-    @model [ (property conserves-mass)
+    @model [ (property (conserves-mass amount))
              (property (> amount 0.0))
-             (property (valid-account sender))
-             (property (valid-account receiver))
+             (property (valid-account-id sender))
+             (property (valid-account-id receiver))
              (property (!= sender receiver)) ]
 
     (with-capability (TRANSFER sender receiver amount)
@@ -177,10 +177,10 @@
 
     @doc " Transfer to an account, failing if the account does not exist. "
 
-    @model [ (property conserves-mass)
+    @model [ (property (conserves-mass amount))
              (property (> amount 0.0))
-             (property (valid-account sender))
-             (property (valid-account receiver))
+             (property (valid-account-id sender))
+             (property (valid-account-id receiver))
              (property (!= sender receiver)) ]
 
     (with-read token-table receiver
@@ -264,8 +264,8 @@
 
     @model [ (property (> amount 0.0))
              (property (!= receiver ""))
-             (property (valid-account sender))
-             (property (valid-account receiver))
+             (property (valid-account-id sender))
+             (property (valid-account-id receiver))
            ]
 
     (step
